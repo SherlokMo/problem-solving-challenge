@@ -1,7 +1,7 @@
 # Problem Solving Challenge
 
 # Unit testing
-To unit test the code you have to type in your console the following:
+To test the code you have to type in your console the following:
 ```go
 go test ./... -v
 ```
