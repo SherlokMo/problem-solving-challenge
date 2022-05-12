@@ -2,7 +2,6 @@ package problem05_test
 
 import (
 	"halan-assignment/problem05"
-	"reflect"
 	"testing"
 )
 
@@ -20,8 +19,20 @@ func TestUnique(t *testing.T) {
 
 	for _, tc := range tt {
 		output := problem05.Unique(tc.input)
-		if equal := reflect.DeepEqual(output, tc.target); !equal {
+		if equal := stringSlicesEqual(output, tc.target); !equal {
 			t.Errorf("Expected %v but got %v at input: %v", tc.target, output, tc.input)
 		}
 	}
+}
+
+func stringSlicesEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
 }
