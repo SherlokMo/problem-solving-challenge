@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: test code
-          command: go test ./...
+          command: go test ./... -v
 
 workflows:
   default:
