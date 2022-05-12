@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: golang:1.18-alpine
+    steps:
+      - checkout
+      - run:
+          name: test code
+          command: go test ./...
+
+workflow:
+  default:
+    - test
