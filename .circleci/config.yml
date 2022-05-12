@@ -10,6 +10,7 @@ jobs:
           name: test code
           command: go test ./...
 
-workflow:
+workflows:
   default:
-    - test
+    jobs:
+      - test
